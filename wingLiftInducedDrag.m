@@ -21,13 +21,13 @@ theta = acos(2*abs(y)/b);
 shape = sqrt(1 - (2*y/b).^2);
 
 % Scaling the circulation
-Gamma0 = (4*W)/(pi*rho*V*b);
+Gamma0 = (4*W)/(pi*rho*v*b);
 
 % Spanwise circulation distribution
 Gamma_y = Gamma0 * shape;
 
 % Lift per unit span:
-L_prime = rho * V .* Gamma_y;
+L_prime = rho * v.* Gamma_y;
 
 % Induced Drag Estimation
 CDi = CL_total^2/(pi*AR*e);
@@ -56,7 +56,7 @@ grid on
 
 % Outputs 
 fprintf('Aspect Ratio              = %.2f\n', AR);
-fprintf('Cruise Velocity           = %.2f m/s\n', V);
+fprintf('Cruise Velocity           = %.2f m/s\n', v);
 fprintf('Induced Drag Coefficient  = %.4f\n', CDi);
 fprintf('Total Induced Drag        = %.3f N\n', Di);
 fprintf('Estimated Downwash        = %.3f m/s\n', w);
